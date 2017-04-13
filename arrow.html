@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>上下自主晃动的箭头</title>
+    <link rel="stylesheet" href="./lib/css/animate.css">
+    <style type="text/css">
+        *{margin:0;padding:0;}
+        .bottomed {
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        background-image: url(./lib/images/more.png);
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        height: 40px;
+        cursor: pointer;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        -ms-animation-duration: 1s;
+        -o-animation-duration: 1s;
+        animation-duration: 1s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -ms-animation-iteration-count: infinite;
+        -o-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+        -webkit-animation-fill-mode: backwards;
+        -moz-animation-fill-mode: backwards;
+        -ms-animation-fill-mode: backwards;
+        -o-animation-fill-mode: backwards;
+        animation-fill-mode: backwards;
+        -webkit-animation-delay: 4000ms;
+        -moz-animation-delay: 4000ms;
+        -ms-animation-delay: 4000ms;
+        -o-animation-delay: 4000ms;
+        animation-delay: 4000ms;
+        -webkit-animation-direction: alternate;
+        -moz-animation-direction: alternate;
+        -ms-animation-direction: alternate;
+        -o-animation-direction: alternate;
+        animation-direction: alternate;
+    }
+    </style>
+</head>
+<body>
+<span class="bottomed animated slideInDown"></span>
+</body>
+</html>

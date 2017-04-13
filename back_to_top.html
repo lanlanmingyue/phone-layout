@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>返回顶部</title>
+    <link rel="stylesheet" href="./lib/css/animate.css">
+    <style type="text/css">
+        #back-to-top{
+    position:fixed;
+    bottom:5%;
+    left:90%;
+}
+#back-to-top a{
+    text-align:center;
+    text-decoration:none;
+    color:#d1d1d1;
+    display:block;
+    width:50px;
+    /*ʹ��CSS3�е�transition���Ը���ת�����е�������ӽ���Ч��*/
+    -moz-transition:color 1s;
+    -webkit-transition:color 1s;
+    -o-transition:color 1s;
+}
+#back-to-top a:hover{
+    color:#979797;
+}
+#back-to-top a span{
+    display:block;
+    height:50px;
+    width:50px;
+    background:url(http://img.sibu.cn/font/images/newimages/sibu_03/top.png) no-repeat center center;
+    margin-bottom:5px;
+    -moz-transition:background 1s;
+    -webkit-transition:background 1s;
+    -o-transition:background 1s;
+}
+#back-to-top a:hover span{
+    background:url(http://img.sibu.cn/font/images/newimages/sibu_03/top2.png) no-repeat center center;
+}
+    </style>
+</head>
+<body style="height: 2000px;">
+<p id="back-to-top" style="display: none;" class="bottomed">
+    <a href="#top">
+    <span></span>
+    </a>
+</p>
+</body>
+<script type="text/javascript" src="./lib/js/jquery-1.7.2.min.js"></script>
+
+<script type="text/javascript">
+    $(function(){
+        var about = $(".bottomed").offset().top;
+            $(".bottomed").click(
+                function(){
+                    $("body,html").animate({scrollTop:0},800);
+                }
+            );
+        $(window).scroll(function(){
+        if ($(window).scrollTop()>60){
+            $("#back-to-top").css("display","block");
+        }else{
+            $("#back-to-top").css("display","none");
+        }
+    });
+    })
+</script>
+</html>
