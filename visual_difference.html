@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>上下自主晃动的箭头</title>
+    <link rel="stylesheet" href="./lib/css/animate.css">
+    <style type="text/css">
+        section{
+            width: 100%;
+            padding: 48px 0;
+            overflow: hidden;  /*为了防止影响下一个元素*/
+        }
+        .one{background-color: #01838E;}
+        .bgs {
+        width: 100%;
+        min-height: 600px;
+        position: relative;
+            }
+        .bgs span{display:block;width:100%;height:100%;position:absolute;}
+        .camada0{background:url(./images/camada0.png) center center no-repeat;top:-250px;left:0}
+        .camada1{background:url(./images/camada1.png) center center no-repeat;top:-70px;left:0}
+        .camada2{background:url(./images/camada2.png) center center no-repeat;top:-60px;left:0;}
+        .camada3{background:url(./images/camada3.png) center center no-repeat;top:-60px;left:0}
+        .div01{
+            width: 100%;
+            height: 700px;
+            background: pink;
+            overflow: hidden;  /*为了防止影响下一个元素*/
+        }
+    </style>
+</head>
+<body>
+<section class="one" id="one">
+    <div class="bgs">
+    <span class="camada0"></span>
+    <span class="camada1" id="cad1"></span>
+    <span class="camada2" id="cad2"></span>
+    <span class="camada3"></span>
+  </div>
+</section>
+<div class="div01">
+    <div class="bgs">
+    <span class="camada0"></span>
+    <span class="camada1" id="cad3"></span>
+    <span class="camada2" id="cad4"></span>
+    <span class="camada3"></span>
+  </div>
+</div>
+<script type="text/javascript">
+window.onload =function(){
+     TargetMove("one","cad1","cad2",60,70);
+     TargetMove("div01","cad4","cad3",20,60);
+}
+    function TargetMove(parentTarget,childTarget1,childTarget2,moveValue_1,moveValue_2){
+    var oSpan1=document.getElementById(childTarget1);
+    var oSpan2=document.getElementById(childTarget2);
+    var oSection=document.getElementsByClassName(parentTarget)[0];
+    var clientWidth=document.documentElement.clientWidth/2;
+    var clientHeight=document.documentElement.clientHeight/2;
+    var l=0;
+    var t=0;
+    oSection.onmouseover=oSection.onmousemove=function(ev){
+        movefn(ev);
+    };  
+    function movefn(ev){
+        var ev=ev||event;
+        l=(ev.clientX-clientWidth)/clientWidth*35;
+        l=l>0? Math.ceil(l) : Math.floor(l);
+        t=(ev.clientY-clientHeight)/clientHeight*10;
+        t=t>0? Math.ceil(t) : Math.floor(t);
+        oSpan2.style.left=l+'px';
+        oSpan2.style.top=-moveValue_1+t+'px';
+        oSpan1.style.top=-moveValue_2+t+'px';
+    }
+}
+
+</script>
+</body>
+</html>
