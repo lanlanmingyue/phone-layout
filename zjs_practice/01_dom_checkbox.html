@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+     <title></title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<meta name="format-detection" content="telephone=no" />  
+    <meta name="format-detection" content="email=no" />  
+    <script type="text/javascript">
+    //索引：oDiv.index=i
+        window.onload=function(){
+            var oBtn=document.getElementById("btn");
+            var oCheck=document.getElementsByTagName("input");
+            var oBtnBlack=document.getElementById("btn_black");
+            var oBtnNo=document.getElementById("btn_no")
+            var i,len=oCheck.length;
+            oBtn.onclick=function(){
+                for(i=0;i<len;i++){
+                    oCheck[i].checked="true"; //checked 属性
+                }
+            }
+            oBtnBlack.onclick=function(){
+                for(i=0;i<len;i++){
+                    oCheck[i].checked=!oCheck[i].checked;
+                }
+            }
+            oBtnNo.onclick=function(){
+                for(i=0;i<len;i++){
+                    oCheck[i].checked=false;
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+<span id="btn">全选</span>
+<span id="btn_black">反选</span>
+<span id="btn_no">全不选</span>
+<input type="checkbox" >
+<input type="checkbox" >
+<input type="checkbox" >
+<input type="checkbox" >
+<input type="checkbox" >
+<input type="checkbox" >
+
+</body>
+</html>

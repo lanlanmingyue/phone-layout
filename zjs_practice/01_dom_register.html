@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+     <title></title>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+	<meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />  
+    <script type="text/javascript">
+        /*onmouseover  onmouseout alert onclick className  getElementById  getElementsByClass*/
+        window.onload=function(){
+            var oLabel=document.getElementsByClassName("label-box")[0];
+            var oInfo=document.getElementsByClassName("check-info")[0];
+            oLabel.onmouseover=function(){
+                oInfo.style.display="block";  //元素属性的操作
+                oInfo.className="check-info-chagebg";
+            }
+            oLabel.onmouseout=function(){
+                    oInfo.style.display="none";
+                    oInfo.className="check-info";
+            }
+            oInfo.onmouseover=function(){
+                this.style.display="block";
+                this.className="check-info-chagebg";
+            }
+            oInfo.onmouseout=function(){
+                this.style.display="none";
+                this.className="check-info";
+            }
+        }
+
+    </script>
+    <style type="text/css">
+        .check-info{width:120px;padding:20px;
+            display: none;}
+        .check-info-chagebg{
+            width:120px;
+            padding:20px;
+            display: none;
+            background: pink;
+        }
+    </style>
+</head>
+<body>
+    <label class="label-box">
+        <input type="checkbox" class="check-in">注册协议
+    </label>
+    <div class="check-info">
+        友情提示
+    </div>
+</body>
+</html>

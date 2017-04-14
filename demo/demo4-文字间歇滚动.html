@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<title>文字间歇滚动</title>
+<style type="text/css">
+    *{margin: 0;padding: 0}
+    /*css reset*/
+    body{background: #F2F2F2;font-family:"宋体";font-size: 14px;width:100%;}
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,th,td{margin: 0;padding: 0;}
+    table{border-collapse: collapse;border-spacing: 0;}
+    fieldset,img{border-top-right-radius: 0;}
+    address,caption,cite,code,dfn,em,th,var{font-style: normal;font-weight: normal;}
+    ol,ul,li{list-style: none;}
+    caption,th,{text-align: left;}
+    h1,h2,h3,h4,h5,h6{ font-size: 100%;font-weight:normal;}
+    abbr,acronym{border:0;}
+    a{text-decoration: none;outline:none;blr:expression(this.onFocus=this.blur());}
+    a:hover{text-decoration: none;}
+    img{border:0;}
+    input{outline:none;font-family: "宋体";}
+    p{text-align:justify;}
+    .con-bar{width:260px; text-align:center; height:30px; line-height:30px;  color:#999; margin:10px auto; overflow:hidden;}
+</style>
+</head>
+<body>
+            <!--register scrolling--> 
+            <div id="list_con" class="con-bar">
+            	<ul class="list" id="news_list">
+                	<li>1 刚刚有网友 hu**28 提交了实名认证</li>
+                    <li>2 刚刚有网友 hu**28 提交了实名认证</li>
+                    <li>3 刚刚有网友 hu**28 提交了实名认证</li>
+                    <li>4 刚刚有网友 hu**28 提交了实名认证</li>
+                </ul>
+            </div>
+</body>
+<script type="text/javascript">
+    // JavaScript Document
+
+    function scrollTitle(changeSpeed,scrollSpeed){
+        var con=document.getElementById("list_con");
+        var list=document.getElementById("news_list");
+            list.innerHTML+=list.innerHTML;
+        var items=list.getElementsByTagName("li");
+        var timer_1=setInterval(_scrollTitle,changeSpeed);
+        var heightAll=0;
+        for(var i=0;i<items.length;i++){heightAll+=items[i].offsetHeight;}
+        var heightHalf=parseInt(heightAll/2);
+        function _scrollTitle(){
+            var timer;
+            var num=30;
+            timer=setInterval(scrollTop,scrollSpeed);
+            function scrollTop(){
+                if(con.scrollTop<heightHalf){
+                    con.scrollTop+=3;num-=3;
+                }else{con.scrollTop=0;}
+                if(num<=0){clearInterval(timer);}}}}
+    scrollTitle(3000,50);
+</script>
+</html>
